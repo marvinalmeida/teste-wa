@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import Button from "@material-ui/core/Button";
 import { Wrapper } from "./Radio.style";
 
 const Radio = ({
@@ -7,6 +8,8 @@ const Radio = ({
   correct_answer,
   onChange,
   active,
+  disable,
+  handleClick
 }) => {
 
   const allAnswer = [...incorrect_answers, correct_answer];
@@ -39,6 +42,9 @@ const Radio = ({
           </label>
         ))}
       </fieldset>
+      <Button disabled={disable} variant="contained" color="primary" onClick={handleClick}>
+        proxima
+      </Button>
     </Wrapper>
   );
 };

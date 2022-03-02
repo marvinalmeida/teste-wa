@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import {Wrapper} from "./startOrRemoveQuestions.style"
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 
 const StartOrRemoveQuestions = () => {
   const handleRemoveQuestion = () => {
@@ -9,18 +10,19 @@ const StartOrRemoveQuestions = () => {
   };
   return (
     <Wrapper>
-      <Link to="/start">
-        <Button variant="contained" color="primary">
-          Start
-        </Button>
-      </Link>
+
       <Link to="/">
         <Button
-          variant="contained"
+          variant="outlined"
           color="primary"
           onClick={handleRemoveQuestion}
         > 
           Cancel
+        </Button>
+      </Link>
+      <Link to="/start">
+        <Button variant="contained" color="primary" endIcon={<PlayArrowIcon />}>
+          Start
         </Button>
       </Link>
     </Wrapper>
