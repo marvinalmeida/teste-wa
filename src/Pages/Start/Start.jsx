@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import Radio from "../../Components/Form/Radio";
 import { Wrapper } from "./Start.styles";
 import PollIcon from "@material-ui/icons/Poll";
@@ -7,9 +6,7 @@ import PollIcon from "@material-ui/icons/Poll";
 const Start = () => {
   const playQuestions = JSON.parse(localStorage.getItem("questions") || "[]");
 
-  const [respErrada, setRespErrada] = useState([]);
-
-  const [respostasCorretas, setRespostasCorretas] = useState([]);
+  const [rightAnswer, setRightAnswer] = useState([]);
 
   const [selectQuestion, setSelectQuestion] = useState({});
 
@@ -19,21 +16,13 @@ const Start = () => {
 
   const [slide, setSlide] = useState(0);
 
-  function resultadoFinal() {
+  function finalResut() {
     const finalCorrectQuestion = playQuestions.filter(
       (question) =>
         selectQuestion[question.question] === question.correct_answer
     );
-    setRespostasCorretas(finalCorrectQuestion);
+    setRightAnswer(finalCorrectQuestion);
     setFinished(true);
-  }
-
-  function errouTodas() {
-    const errorQuestions = playQuestions.filter(
-      (question) =>
-        selectQuestion[question.question] !== question.correct_answer
-    );
-    setRespErrada(errorQuestions);
   }
 
   const handleChange = ({ target }, questionName) => {
@@ -47,7 +36,7 @@ const Start = () => {
     if (slide < playQuestions.length - 1) {
       setSlide(slide + 1);
     } else {
-      resultadoFinal();
+      finalResut();
       setSlide();
     }
   };
@@ -76,7 +65,7 @@ const Start = () => {
               <PollIcon />
               <h1>Quiz finalizado com sucesso</h1>
 
-              <h2>{`você acertou o total de ${respostasCorretas.length} de ${playQuestions.length}`}</h2>
+              <h2>{`você acertou o total de ${rightAnswer.length} de ${playQuestions.length}`}</h2>
             </div>
           )}
         </form>

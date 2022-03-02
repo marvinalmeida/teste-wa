@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import { getAllQuestions } from "../../Services/questions.services";
 import { Wrapper } from "./Home.styles";
 
 const Home = () => {
-  
   const [numberQuestions, setNumberQuestions] = useState("");
 
   useEffect(() => {
@@ -37,7 +36,7 @@ const Home = () => {
         <div className="input-link">
           <TextField
             fullWidth
-           size="small"
+            size="small"
             type="number"
             onChange={handleChange}
             id="outlined-basic"
@@ -45,7 +44,9 @@ const Home = () => {
             variant="outlined"
           />
           <Link to="play">
-            <Button color="primary" size="medium" variant="contained">Começar</Button>
+            <Button color="primary" size="medium" variant="contained">
+              Começar
+            </Button>
           </Link>
         </div>
       </div>
