@@ -43,7 +43,7 @@ const Radio = ({
         ))}
       </fieldset>
       <Button disabled={disable} variant="contained" color="primary" onClick={handleClick}>
-        proxima
+        next
       </Button>
     </Wrapper>
   );

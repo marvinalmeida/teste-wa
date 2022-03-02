@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Radio from "../../Components/Form/Radio";
+import Radio from "../../Components/Radio/Radio";
 import { Wrapper } from "./Start.styles";
 import PollIcon from "@material-ui/icons/Poll";
 
@@ -64,7 +64,6 @@ const Start = () => {
             <div className="finish-panel">
               <PollIcon />
               <h1>Quiz finalizado com sucesso</h1>
-
               <h2>{`você acertou o total de ${rightAnswer.length} de ${playQuestions.length}`}</h2>
             </div>
           )}

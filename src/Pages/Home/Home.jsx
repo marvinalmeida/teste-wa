@@ -45,7 +45,7 @@ const Home = () => {
           />
           <Link to="play">
             <Button color="primary" size="medium" variant="contained">
-              Começar
+              Start
             </Button>
           </Link>
         </div>
